@@ -41,4 +41,13 @@ public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
     {
         Health = health;
     }
+
+    public float getMovespeed()
+    {
+        return Movespeed;
+    }
+    public void setMovespeed(float movespeed)
+    {
+        Movespeed = movespeed;
+    }
 }
