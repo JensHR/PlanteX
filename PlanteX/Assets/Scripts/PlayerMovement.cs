@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool moving;
     bool jumping;
+    bool grounded;
 
     public float movementSpeed;
     public float jumpHeight;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moving = false;
         jumping = false;
+        grounded = false:
 
         rb = GetComponent<Rigidbody>();
     }
@@ -50,11 +52,18 @@ public class PlayerMovement : MonoBehaviour
                 
         }
 
-        if (jumping)
+        if (jumping && grounded)
         {
             Vector3 jump = new Vector3(0, jumpHeight, 0);
             rb.AddForce(jump * jumpMultiplier * Time.deltaTime);
             jumping = false;
+        }
+    }
+    onCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            grounded = true;
         }
     }
 }

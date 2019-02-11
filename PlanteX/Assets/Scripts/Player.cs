@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Unit
 {
+    private int level;
+    private float experience;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +16,20 @@ public class Player : Unit
     // Update is called once per frame
     void Update()
     {
-         
+
+    }
+
+    void LateUpdate()
+    {
+        checkIfDead();
+    }
+
+    private void checkIfDead()
+    {
+        if (getHealth() <= 0)
+        {
+            Kill();
+        }
     }
 
     public void Kill()
@@ -25,6 +40,6 @@ public class Player : Unit
 
     public void Damage(float damageTaken)
     {
-
+        base.Damage();
     }
 }
