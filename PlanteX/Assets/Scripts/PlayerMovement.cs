@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moving = false;
         jumping = false;
-        grounded = false:
+        grounded = false;
 
         rb = GetComponent<Rigidbody>();
     }
@@ -59,7 +59,8 @@ public class PlayerMovement : MonoBehaviour
             jumping = false;
         }
     }
-    onCollisionEnter(Collision collision)
+
+    void onCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {

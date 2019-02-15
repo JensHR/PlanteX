@@ -40,6 +40,8 @@ public class Player : Unit
 
     public void Damage(float damageTaken)
     {
-        base.Damage();
+        //Her kan en skrive mer ting feks; Notifikasjon om å ha tatt skade til brukeren. 
+
+        base.Damage(damageTaken);
     }
 }

@@ -5,7 +5,8 @@ public class StateSelector : MonoBehaviour
     public Transform target;
 
     void Start() {
-
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        target = player.transform;
     }
     void LateUpdate() {
 
