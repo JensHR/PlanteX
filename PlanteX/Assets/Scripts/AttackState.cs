@@ -26,4 +26,9 @@ public class AttackState : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
     }
+
+    public void begin()
+    {
+        target = gameObject.GetComponent<Enemy>().getTarget();
+    }
 }

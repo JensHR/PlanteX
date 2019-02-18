@@ -2,11 +2,24 @@
 
 public class Enemy : Unit 
 {
-    private Transform target;
+    public Transform target;
+
+    public float aggroRange;
+    public float attackRange;
 
     void Update()
     {
 
+    }
+
+    void Awake() 
+    {
+        Debug.Log("Awoke Enemy");
+    }
+
+    public void CreateNew()
+    {
+        //target = GameObject.FindWithTag("Player").transform;
     }
 
     public void setTarget(Transform newTarget)
@@ -19,6 +32,22 @@ public class Enemy : Unit
         return target;
     }
 
+    public void setAttackRange(float range)
+    {
+        attackRange = range;
+    }
+    public float getAttackRange()
+    {
+        return attackRange;
+    }
 
+    public void setAggroRange(float agRange)
+    {
+        aggroRange = agRange;
+    }
+    public float getAggroRange()
+    {
+        return aggroRange;
+    }
 
 }

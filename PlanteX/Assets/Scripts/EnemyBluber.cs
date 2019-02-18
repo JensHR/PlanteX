@@ -5,23 +5,31 @@ using UnityEngine;
 public class EnemyBluber : Enemy
 {
     public StateSelector stateSelector;
-
+    public int currentState;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        CreateNew();
     }
 
     void Awake()
     {
+
+    }
+
+    public void CreateNew()
+    {
+        base.CreateNew();
+        stateSelector = gameObject.GetComponent<StateSelector>();
+        currentState = StateSelector.NOSTATE;
+
+        setMovespeed(10);
         setAggroRange(10);
         setAttackRange(1);
         setHealth(100);
-
-
     }
 
     // Update is called once per frame
@@ -32,24 +40,40 @@ public class EnemyBluber : Enemy
 
     void FixedUpdate() 
     {
-        float distance = Vector3.Distance(getTarget, gameObject);
+        float distance = Vector3.Distance(getTarget().position, gameObject.transform.position);
 
-        Debug.Log(distance);
+        /* Debugging positioning
+        Debug.Log("targetPos: " + getTarget().position);
+        Debug.Log("myPos: " + gameObject.transform.position);
+        Debug.Log("distance: " + distance);
+        */
 
         if(distance <= getAttackRange())
         {
-            Debug.Log("Starting attackState script")
-            stateSelector.enableAttackState();
+            if(currentState != StateSelector.ATTACKSTATE)
+            {
+                Debug.Log("Starting attackState script");
+                stateSelector.enableAttackState();
+                currentState = StateSelector.ATTACKSTATE;
+            }   
         }
         else if(distance <= getAggroRange())
         {
-            Debug.Log("Starting chaseState script")
-            stateSelector.enableChaseState();
+            if (currentState != StateSelector.CHASESTATE)
+            {
+                Debug.Log("Starting chaseState script");
+                stateSelector.enableChaseState();
+                currentState = StateSelector.CHASESTATE;
+            }
         }
         else 
         {
-            Debug.Log("Starting patrolState script")
-            stateSelector.enablePatrolState(); 
+            if (currentState != StateSelector.PATROLSTATE)
+            {
+                Debug.Log("Starting patrolState script");
+                stateSelector.enablePatrolState();
+                currentState = StateSelector.PATROLSTATE;
+            }
         }
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
 {
-    private float Health;
-    private float Movespeed;
+    public float Health;
+    public float Movespeed;
 
 
     // Start is called before the first frame update

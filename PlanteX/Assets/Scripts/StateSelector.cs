@@ -2,9 +2,13 @@
 
 public class StateSelector : MonoBehaviour
 {
+    public static readonly int NOSTATE = 0;
+    public static readonly int ATTACKSTATE = 1;
+    public static readonly int CHASESTATE = 2;
+    public static readonly int PATROLSTATE = 3;
+
     void Start() {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        target = player.transform;
+        
     }
     void LateUpdate() {
 
@@ -12,18 +16,21 @@ public class StateSelector : MonoBehaviour
 
     public void enableChaseState() {
         disableAllStates();
+        gameObject.GetComponent<ChaseState>().begin();
         gameObject.GetComponent<ChaseState>().enabled = true;
     }
 
     public void enableAttackState()
     {
         disableAllStates();
+        gameObject.GetComponent<AttackState>().begin();
         gameObject.GetComponent<AttackState>().enabled = true;
     }
 
     public void enablePatrolState()
     {
         disableAllStates();
+        gameObject.GetComponent<PatrolState>().begin();
         gameObject.GetComponent<PatrolState>().enabled = true;
     }
 
