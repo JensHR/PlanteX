@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = new Vector3(0, 10f, -2f);
+        offset = new Vector3(0, 15f, -2f);
         rotation = Quaternion.Euler(67, 0, 0);
         transform.rotation = rotation;
     }
