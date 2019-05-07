@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 
         }
 
-        if (jumping && grounded)
+        if (jumping)
         {
             Vector3 jump = new Vector3(0, jumpHeight, 0);
             rb.AddForce(jump * jumpMultiplier * Time.deltaTime);
@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
     void onCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject)
         {
             grounded = true;
         }

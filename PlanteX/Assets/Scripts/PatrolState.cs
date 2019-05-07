@@ -18,7 +18,7 @@ public class PatrolState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
+        moveSpot = new Vector3(Random.Range(minX, maxX), 1f, Random.Range(minZ, maxZ));
         moveDelay = defaultMoveDelay;
     }
 
@@ -32,7 +32,7 @@ public class PatrolState : MonoBehaviour
         {
             if (moveDelay <= 0)
             {
-                moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
+                moveSpot = new Vector3(Random.Range(minX, maxX), 1f, Random.Range(minZ, maxZ));
                 moveDelay = defaultMoveDelay;
             }
             else
@@ -49,7 +49,7 @@ public class PatrolState : MonoBehaviour
         minZ = gameObject.transform.position.z - 10;
         maxX = gameObject.transform.position.x + 10;
         maxZ = gameObject.transform.position.z + 10;
-        moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
+        moveSpot = new Vector3(Random.Range(minX, maxX), 1f, Random.Range(minZ, maxZ));
 
     }
 }

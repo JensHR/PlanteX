@@ -26,6 +26,7 @@ public class ChaseState : MonoBehaviour
 
     public void begin()
     {
-        target = gameObject.GetComponent<Enemy>().getTarget();
+        //target = gameObject.GetComponent<Enemy>().getTarget();
+        target = GameObject.FindWithTag("Player").transform;
     }
 }
