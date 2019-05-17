@@ -6,16 +6,17 @@ public class DashMove : Ability
 {
 
     private float DashSpeed = 1500;
+
     private float CooldownTime = 2;
+    private float NextFireTime = 0;
 
-    private float nextFireTime = 0;
-
-    public void Initialize(Rigidbody rb)
+    public override void Initialize(Rigidbody rb, Unit unit)
     {
-        if (Time.time > nextFireTime)
+        if (Time.time > NextFireTime)
         {
-            rb.AddForce(rb.transform.forward * DashSpeed * Time.deltaTime, ForceMode.Impulse);
-            nextFireTime = Time.time + CooldownTime;
+            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            rb.AddRelativeForce(movement * DashSpeed * Time.deltaTime, ForceMode.Impulse);
+            NextFireTime = Time.time + CooldownTime;
         }
     }
 

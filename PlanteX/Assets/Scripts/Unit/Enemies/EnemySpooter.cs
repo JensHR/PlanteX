@@ -18,17 +18,17 @@ public class EnemySpooter : Enemy
         stateSelector = gameObject.GetComponent<StateSelector>();
         currentState = StateSelector.NOSTATE;
 
-        setMovespeed(0);
-        setAggroRange(15);
-        setAttackRange(15);
-        setHealth(20);
+        MovementSpeed = 0;
+        AggroRange = 15;
+        AttackRange = 15;
+        Health = 20;
     }
 
     private void FixedUpdate()
     {
-        float distance = Vector3.Distance(getTarget().position, gameObject.transform.position);
+        float distance = Vector3.Distance(Target.position, transform.position);
 
-        if (distance <= getAggroRange())
+        if (distance <= AggroRange)
         {
             if(currentState != StateSelector.ATTACKSTATE)
             {

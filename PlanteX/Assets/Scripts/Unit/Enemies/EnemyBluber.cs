@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class EnemyBluber : Enemy
 {
-    public StateSelector stateSelector;
-    public int currentState;
+    private StateSelector stateSelector;
+    private int currentState;
 
-
+    [Header("Type spesific values")]
+    public float AttackWindup;
+    public float AttackVelocity;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,6 @@ public class EnemyBluber : Enemy
         base.CreateNew();
         stateSelector = gameObject.GetComponent<StateSelector>();
         currentState = StateSelector.NOSTATE;
-
-        setMovespeed(3);
-        setAggroRange(10);
-        setAttackRange(2);
-        setHealth(100);
     }
 
     // Update is called once per frame
@@ -38,9 +35,15 @@ public class EnemyBluber : Enemy
         
     }
 
+    public override void Attack()
+    {
+        
+    }
+
     void FixedUpdate() 
     {
-        float distance = Vector3.Distance(getTarget().position, gameObject.transform.position);
+
+        float distance = Vector3.Distance(Target.position, transform.position);
 
         /* Debugging positioning
         Debug.Log("targetPos: " + getTarget().position);
@@ -48,7 +51,8 @@ public class EnemyBluber : Enemy
         Debug.Log("distance: " + distance);
         */
 
-        if(distance <= getAttackRange())
+        //AI logic
+        if(distance <= AttackRange)
         {
             if(currentState != StateSelector.ATTACKSTATE)
             {
@@ -57,7 +61,7 @@ public class EnemyBluber : Enemy
                 currentState = StateSelector.ATTACKSTATE;
             }   
         }
-        else if(distance <= getAggroRange())
+        else if(distance <= AggroRange)
         {
             if (currentState != StateSelector.CHASESTATE)
             {

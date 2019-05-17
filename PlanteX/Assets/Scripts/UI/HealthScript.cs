@@ -20,6 +20,6 @@ public class HealthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthField.text = HEALTHSTRING + player.getHealth().ToString();
+        healthField.text = HEALTHSTRING + player.Health.ToString();
     }
 }

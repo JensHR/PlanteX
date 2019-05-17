@@ -5,24 +5,9 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
 
-    public LayerMask clickMask;
 
-    public void use()
+    public virtual void Initialize(Rigidbody rb, Unit us)
     {
-        Debug.Log("Ability used.. :(");
-    }
-
-    public Vector3 getClickPosition()
-    {
-        Vector3 clickPosition = -Vector3.one;
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast (ray, out hit, 10f)){
-            clickPosition = hit.point;
-        }
-
-        return clickPosition;
+        Debug.Log("Error Ability baseclass Initialize() called");
     }
 }

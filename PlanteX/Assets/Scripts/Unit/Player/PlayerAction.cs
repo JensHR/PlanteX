@@ -4,31 +4,33 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour  
 {
-    public Rigidbody rb;
+    private Rigidbody rb;
+    private Player Player;
 
-    private bool usingActionOne;
-    private bool usingActionTwo;
-    private bool usingActionThree;
+    private bool UsingActionOne;
+    private bool UsingActionTwo;
+    private bool UsingActionThree;
 
     private Ability ActionOne;
     private Ability ActionTwo;
     private Ability ActionThree;
 
-    private DashMove dashmove;
-    private SeedShot seedshot;
+    private DashMove Dashmove;
+    private SeedShot Seedshot;
 
     // Start is called before the first frame update
     void Start()
     {
-        usingActionOne = false;
-        usingActionTwo = false;
-        usingActionThree = false;
+        UsingActionOne = false;
+        UsingActionTwo = false;
+        UsingActionThree = false;
 
-        rb = gameObject.GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
+        Player = GetComponent<Player>();
 
-        dashmove = new DashMove();
+        ActionOne = new DashMove();
 
-        seedshot = new SeedShot();
+        Seedshot = new SeedShot();
     }
 
     // Update is called once per frame
@@ -36,17 +38,38 @@ public class PlayerAction : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            dashmove.Initialize(rb);
+            UsingActionOne = true;
         }
 
         if (Input.GetButton("Fire2"))
         {
-            seedshot.Initialize();
+            UsingActionTwo = true;
         }
 
         if (Input.GetButton("Fire3"))
         {
+            UsingActionThree = true;
+        }
+    }
 
+    private void FixedUpdate()
+    {
+        if (UsingActionOne)
+        {
+            ActionOne.Initialize(rb, Player);
+            UsingActionOne = false;
+        }
+
+        if (UsingActionTwo)
+        {
+            Seedshot.Initialize();
+            UsingActionTwo = false;
+        }
+
+        if (UsingActionThree)
+        {
+            //ActionThree
+            UsingActionThree = false;
         }
     }
 }
