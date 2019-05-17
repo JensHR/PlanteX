@@ -5,8 +5,6 @@ using UnityEngine;
 public class AttackState : MonoBehaviour
 {
 
-    private Transform Target;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +19,6 @@ public class AttackState : MonoBehaviour
 
     public void Begin()
     {
-        Target = GetComponent<Enemy>().Target;
+        
     }
 }

@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: 466331c9ff81a70418791f0f2741cc94
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Alien_HorrorStyle
+    100002: kroppen
+    100004: LeaflessTree
+    100006: pasted__group15
+    100008: pasted__group16
+    100010: pasted__group18
+    100012: pasted__group19
+    100014: pasted__group20
+    100016: pasted__group21
+    100018: pasted__group235
+    100020: pasted__group238
+    100022: pasted__group240
+    100024: pasted__group241
+    100026: pasted__group243
+    100028: pasted__h
+    100030: pasted__h 1
+    100032: pasted__h1
+    100034: pasted__h2
+    100036: pasted__h3
+    100038: pasted__pasted__arm
+    100040: pasted__pasted__arm 1
+    100042: pasted__pasted__group1
+    100044: pasted__pasted__group13
+    100046: pasted__pasted__group14
+    100048: pasted__pasted__group14 1
+    100050: pasted__pasted__group17
+    100052: pasted__pasted__group18
+    100054: pasted__pasted__group19
+    100056: pasted__pasted__group2
+    100058: pasted__pasted__group235
+    100060: pasted__pasted__l_arm
+    100062: pasted__pasted__legomann
+    100064: pasted__pasted__legomann_pasted__pSphere3
+    100066: pasted__pasted__pasted__arm
+    100068: pasted__pasted__pasted__arm 1
+    100070: pasted__pasted__pasted__group1
+    100072: pasted__pasted__pasted__group14
+    100074: pasted__pasted__pasted__group2
+    100076: pasted__pasted__pasted__l_arm
+    100078: pasted__pasted__pasted__pasted__pCylinder10
+    100080: pasted__pasted__pasted__pasted__pSphere1
+    100082: pasted__pasted__pasted__pCylinder1
+    100084: pasted__pasted__pasted__pCylinder10
+    100086: pasted__pasted__pasted__pCylinder2
+    100088: pasted__pasted__pasted__pCylinder3
+    100090: pasted__pasted__pasted__pCylinder4
+    100092: pasted__pasted__pasted__pSphere1
+    100094: pasted__pasted__pasted__pSphere1 1
+    100096: pasted__pasted__pasted__pSphere3
+    100098: pasted__pasted__pasted__transform1
+    100100: pasted__pasted__pasted__transform2
+    100102: pasted__pasted__pCube6
+    100104: pasted__pasted__pCube6 1
+    100106: pasted__pasted__pCube7
+    100108: pasted__pasted__pCube7 1
+    100110: pasted__pasted__pCylinder2
+    100112: pasted__pasted__pCylinder3
+    100114: pasted__pasted__pCylinder4
+    100116: pasted__pasted__pSphere1
+    100118: pasted__pasted__pSphere1 1
+    100120: pasted__pasted__pSphere3
+    100122: pasted__pasted__pSphere3 1
+    100124: pasted__pasted__transform1
+    100126: pasted__pasted__transform2
+    100128: pasted__pasted__transform42
+    100130: pasted__pasted__transform43
+    100132: pasted__pasted__transform44
+    100134: pasted__pasted__transform45
+    100136: pasted__pasted__transform7
+    100138: pasted__pasted__transform8
+    100140: pasted__pasted__v
+    100142: pasted__pasted__v 1
+    100144: pasted__pCube6
+    100146: pasted__pCube6 1
+    100148: pasted__pCylinder1
+    100150: pasted__transform10
+    100152: pasted__transform11
+    100154: pasted__transform12
+    100156: pasted__transform13
+    100158: pasted__transform14
+    100160: pasted__transform3
+    100162: pasted__transform4
+    100164: pasted__transform5
+    100166: pasted__transform57
+    100168: pasted__transform58
+    100170: pasted__transform59
+    100172: pasted__transform6
+    100174: pasted__transform60
+    100176: pasted__transform61
+    100178: pasted__transform62
+    100180: pasted__transform9
+    100182: pasted__v
+    100184: pasted__v 1
+    100186: pCone1
+    100188: pCylinder1
+    100190: potte
+    100192: potten
+    100194: sword
+    100196: trestump
+    100198: //RootNode
+    400000: Alien_HorrorStyle
+    400002: kroppen
+    400004: LeaflessTree
+    400006: pasted__group15
+    400008: pasted__group16
+    400010: pasted__group18
+    400012: pasted__group19
+    400014: pasted__group20
+    400016: pasted__group21
+    400018: pasted__group235
+    400020: pasted__group238
+    400022: pasted__group240
+    400024: pasted__group241
+    400026: pasted__group243
+    400028: pasted__h
+    400030: pasted__h 1
+    400032: pasted__h1
+    400034: pasted__h2
+    400036: pasted__h3
+    400038: pasted__pasted__arm
+    400040: pasted__pasted__arm 1
+    400042: pasted__pasted__group1
+    400044: pasted__pasted__group13
+    400046: pasted__pasted__group14
+    400048: pasted__pasted__group14 1
+    400050: pasted__pasted__group17
+    400052: pasted__pasted__group18
+    400054: pasted__pasted__group19
+    400056: pasted__pasted__group2
+    400058: pasted__pasted__group235
+    400060: pasted__pasted__l_arm
+    400062: pasted__pasted__legomann
+    400064: pasted__pasted__legomann_pasted__pSphere3
+    400066: pasted__pasted__pasted__arm
+    400068: pasted__pasted__pasted__arm 1
+    400070: pasted__pasted__pasted__group1
+    400072: pasted__pasted__pasted__group14
+    400074: pasted__pasted__pasted__group2
+    400076: pasted__pasted__pasted__l_arm
+    400078: pasted__pasted__pasted__pasted__pCylinder10
+    400080: pasted__pasted__pasted__pasted__pSphere1
+    400082: pasted__pasted__pasted__pCylinder1
+    400084: pasted__pasted__pasted__pCylinder10
+    400086: pasted__pasted__pasted__pCylinder2
+    400088: pasted__pasted__pasted__pCylinder3
+    400090: pasted__pasted__pasted__pCylinder4
+    400092: pasted__pasted__pasted__pSphere1
+    400094: pasted__pasted__pasted__pSphere1 1
+    400096: pasted__pasted__pasted__pSphere3
+    400098: pasted__pasted__pasted__transform1
+    400100: pasted__pasted__pasted__transform2
+    400102: pasted__pasted__pCube6
+    400104: pasted__pasted__pCube6 1
+    400106: pasted__pasted__pCube7
+    400108: pasted__pasted__pCube7 1
+    400110: pasted__pasted__pCylinder2
+    400112: pasted__pasted__pCylinder3
+    400114: pasted__pasted__pCylinder4
+    400116: pasted__pasted__pSphere1
+    400118: pasted__pasted__pSphere1 1
+    400120: pasted__pasted__pSphere3
+    400122: pasted__pasted__pSphere3 1
+    400124: pasted__pasted__transform1
+    400126: pasted__pasted__transform2
+    400128: pasted__pasted__transform42
+    400130: pasted__pasted__transform43
+    400132: pasted__pasted__transform44
+    400134: pasted__pasted__transform45
+    400136: pasted__pasted__transform7
+    400138: pasted__pasted__transform8
+    400140: pasted__pasted__v
+    400142: pasted__pasted__v 1
+    400144: pasted__pCube6
+    400146: pasted__pCube6 1
+    400148: pasted__pCylinder1
+    400150: pasted__transform10
+    400152: pasted__transform11
+    400154: pasted__transform12
+    400156: pasted__transform13
+    400158: pasted__transform14
+    400160: pasted__transform3
+    400162: pasted__transform4
+    400164: pasted__transform5
+    400166: pasted__transform57
+    400168: pasted__transform58
+    400170: pasted__transform59
+    400172: pasted__transform6
+    400174: pasted__transform60
+    400176: pasted__transform61
+    400178: pasted__transform62
+    400180: pasted__transform9
+    400182: pasted__v
+    400184: pasted__v 1
+    400186: pCone1
+    400188: pCylinder1
+    400190: potte
+    400192: potten
+    400194: sword
+    400196: trestump
+    400198: //RootNode
+    2100000: blinn1
+    2100002: lambert3
+    2100004: lambert2
+    2100006: LeaflessTree_blinn1
+    2100008: CharacterFullAlienHorrorStyle_blinn1
+    2100010: lambert1
+    2100012: LargeSword_blinn1
+    2300000: Alien_HorrorStyle
+    2300002: LeaflessTree
+    2300004: pCone1
+    2300006: pCylinder1
+    2300008: potten
+    2300010: sword
+    2300012: trestump
+    3300000: Alien_HorrorStyle
+    3300002: LeaflessTree
+    3300004: pCone1
+    3300006: pCylinder1
+    3300008: potten
+    3300010: sword
+    3300012: trestump
+    4300000: trestump
+    4300002: pCylinder1
+    4300004: potten
+    4300006: LeaflessTree
+    4300008: Alien_HorrorStyle
+    4300010: pCone1
+    4300012: sword
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

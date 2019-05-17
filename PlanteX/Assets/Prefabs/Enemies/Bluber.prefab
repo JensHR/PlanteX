@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 0
 --- !u!114 &3414016266058854318
 MonoBehaviour:
@@ -131,12 +131,12 @@ MonoBehaviour:
   JumpMultiplier: 0
   MovementSpeedCapped: 1
   Health: 100
-  AttackDamage: 10
-  Target: {fileID: 955561741068458134, guid: bb6362274203e1e41b4f2c3e74468ba7, type: 3}
-  AggroRange: 10
-  AttackRange: 2
-  stateSelector: {fileID: 0}
-  currentState: 0
+  AttackDamage: 2
+  Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}
+  AggroRange: 20
+  AttackRange: 3
+  AttackWindupTime: 2
+  AttackVelocity: 5000
 --- !u!114 &3497765373811638001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,8 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a092dc7b22614fad62f940174a8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  Target: {fileID: 0}
 --- !u!114 &5497793343538516017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +173,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce1763fa6f8a0b42bfed1291116d61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &8586765348980753231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,9 +185,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21487c5842182a242adbcfae956bd226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMoveDelay: 0
-  moveSpot: {x: 0, y: 0, z: 0}
-  minX: 0
-  minZ: 0
-  maxX: 0
-  maxZ: 0
