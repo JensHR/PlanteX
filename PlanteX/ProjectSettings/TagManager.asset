@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - HealthBar
   - Enemy
+  - PortalSphere
   layers:
   - Default
   - TransparentFX

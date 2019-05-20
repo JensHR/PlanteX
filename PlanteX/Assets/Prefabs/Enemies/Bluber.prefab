@@ -16,8 +16,8 @@ GameObject:
   - component: {fileID: 3414016266058854318}
   - component: {fileID: 3497765373811638001}
   - component: {fileID: 2997782524838277766}
-  - component: {fileID: 5497793343538516017}
-  - component: {fileID: 8586765348980753231}
+  - component: {fileID: 1995484578099006491}
+  - component: {fileID: 4591101173556474765}
   m_Layer: 0
   m_Name: Bluber
   m_TagString: Enemy
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a092dc7b22614fad62f940174a8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5497793343538516017
+--- !u!114 &1995484578099006491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,10 +169,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2004664950098100857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce1763fa6f8a0b42bfed1291116d61a, type: 3}
+  m_Script: {fileID: 11500000, guid: 13c010da16267024aa7dab0dd3bbe90b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8586765348980753231
+--- !u!114 &4591101173556474765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,6 +181,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2004664950098100857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21487c5842182a242adbcfae956bd226, type: 3}
+  m_Script: {fileID: 11500000, guid: 9840b02adf379dd4487f3b133b01c26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

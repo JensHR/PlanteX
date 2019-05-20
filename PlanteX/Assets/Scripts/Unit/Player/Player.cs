@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Unit
 {
@@ -16,8 +17,9 @@ public class Player : Unit
     {
         //Ekstra logik fordi det er spilleren som dør (restartmeny?)
         Debug.Log("You died");
+        //ShowTip
         base.Kill();
-        Debug.Log("You died");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public override void Damage(float damageTaken)
