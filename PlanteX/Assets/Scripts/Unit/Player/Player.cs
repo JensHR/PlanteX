@@ -25,5 +25,6 @@ public class Player : Unit
         //Her kan en skrive mer ting feks; Notifikasjon om å ha tatt skade til brukeren. 
 
         base.Damage(damageTaken);
+        GameObject.FindWithTag("HealthBar").GetComponent<HealthScript>().HandleHealth(Health);
     }
 }

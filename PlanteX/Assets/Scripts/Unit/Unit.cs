@@ -18,7 +18,10 @@ public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
 
     void Update()
     {
-        
+        if(transform.position.y < -20)
+        {
+            Kill();
+        }
     }
 
     public void CheckIfDead()

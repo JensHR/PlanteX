@@ -8,19 +8,9 @@ public class Enemy : Unit
     public float AggroRange;
     public float AttackRange;
 
-    void Update()
-    {
-
-    }
-
     void Awake() 
     {
         Debug.Log("Awoke Enemy");
-    }
-
-    void Start()
-    {
-        
     }
 
     public virtual void Attack()
