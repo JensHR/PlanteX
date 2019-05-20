@@ -4,45 +4,23 @@ using UnityEngine;
 
 public class Player : Unit
 {
-    private int level;
-    private float experience;
 
-    public float maximumMovespeed { get; set; }
-    // Start is called before the first frame update
-    void Start()
-    {
-        //EXAMPLE HEALTH
-        setHealth(100);
-        setMovespeed(20);
-        maximumMovespeed = 10;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public bool MovementSpeedCapped;
 
     void LateUpdate()
     {
-        checkIfDead();
+        
     }
 
-    private void checkIfDead()
+    public override void Kill()
     {
-        if (getHealth() <= 0)
-        {
-            Kill();
-        }
-    }
-
-    public void Kill()
-    {
+        //Ekstra logik fordi det er spilleren som dør (restartmeny?)
+        Debug.Log("You died");
         base.Kill();
         Debug.Log("You died");
     }
 
-    public void Damage(float damageTaken)
+    public override void Damage(float damageTaken)
     {
         //Her kan en skrive mer ting feks; Notifikasjon om å ha tatt skade til brukeren. 
 

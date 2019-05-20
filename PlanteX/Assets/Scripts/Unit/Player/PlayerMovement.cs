@@ -6,93 +6,83 @@ public class PlayerMovement : MonoBehaviour
 {
 
     private Rigidbody rb;
+    private Player Player;
 
-    private int distToGround;
+    private bool Moving;
+    private bool Jumping;
+    private bool Grounded;
 
-    bool moving;
-    bool jumping;
-    bool grounded;
-
-    //stats are here for some reason
-    [SerializeField]
-    public float movementSpeed;
-    [SerializeField]
-    public float maximumMovespeed;
-    [SerializeField]
-    public float jumpHeight;
-    [SerializeField]
-    public float jumpMultiplier;
-
-    private bool ShowCursor; //Brukes ikke
     [SerializeField]
     public float RotationSensitivity;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
-        moving = false;
-        jumping = false;
-        grounded = false;
-
-        
-        //distToGround = GetComponents<Collider>().GetLowerBound();
+        Moving = false;
+        Jumping = false;
+        Grounded = false;
 
         rb = GetComponent<Rigidbody>();
+        Player = GetComponent<Player>();
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            moving = true;
+            Moving = true;
         }
         else
         {
-            moving = false;
+            Moving = false;
         }
 
-        if (Input.GetKeyDown("space") && grounded)
+        if (Input.GetKeyDown("space") && Grounded)
         {
-            jumping = true;
-            //Debug.Log("jumping: " + jumping + " | grounded: " + grounded);
+            Jumping = true;
         }
 
-        float newRotationY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSensitivity;
-
-        rb.transform.localEulerAngles = new Vector3(0, newRotationY, 0); ;
+        CoordinateCamera();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
 
-        if (moving)
+        if(Moving || Jumping && Grounded)
         {
-            maximumMovespeed = GetComponent<Player>().maximumMovespeed;
-            movementSpeed = GetComponent<Player>().getMovespeed();
-            Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            float maximumMovespeed = Player.MaximumMovementSpeed;
+            //Denne tillater oss å gi spiller mer fart en maximum når en feks bruker bevegelses egenskaper.
+            bool movespeedCapped = Player.MovementSpeedCapped;
 
-            //Debug.Log(rb.velocity.magnitude);
-
-            /*rb.velocity = (transform.right * movement.x * movementSpeed);
-            rb.velocity = (transform.forward * movement.z * movementSpeed);*/
-            rb.AddRelativeForce(movement * movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
-
-            if (rb.velocity.magnitude > maximumMovespeed)
+            if (Moving)
             {
-                rb.velocity = rb.velocity.normalized * maximumMovespeed;
+                float movementSpeed = Player.MovementSpeed;
+
+                Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+                rb.AddRelativeForce(movement * movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
+
+                if (rb.velocity.magnitude > maximumMovespeed && movespeedCapped)
+                {
+                    rb.velocity = rb.velocity.normalized * maximumMovespeed;
+                }
             }
-        }
 
-        if (jumping && grounded)
-        {
-            Vector3 jump = new Vector3(0, jumpHeight, 0);
-            rb.AddForce(jump * jumpMultiplier * Time.deltaTime);
-            jumping = false;
-            grounded = false;
-
-            if(rb.velocity.magnitude > maximumMovespeed + 7)
+            if (Jumping && Grounded)
             {
-                rb.velocity = rb.velocity.normalized * (maximumMovespeed + 7);
+                float jumpHeight = Player.JumpHeight;
+                float jumpMultiplier = Player.JumpMultiplier;
+
+                Vector3 jump = new Vector3(0, jumpHeight, 0);
+                rb.AddForce(jump * jumpMultiplier * Time.deltaTime);
+                Jumping = false;
+                Grounded = false;
+
+                if (rb.velocity.magnitude > maximumMovespeed + 7 && movespeedCapped)
+                {
+                    rb.velocity = rb.velocity.normalized * (maximumMovespeed + 7);
+                }
             }
         }
     }
@@ -102,7 +92,24 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("collided: " + collision);
         if (collision.collider.tag == "Ground")
         {
-            grounded = true;
+            Grounded = true;
         }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        //Denne KAN fjernes ettersom det egentlig kunne ha vært en kul mechanical feature
+
+        //Hindrer deg i å hoppe om du forlater bakken f.eks faller ned fra noe
+        if (collision.collider.tag == "Ground")
+        {
+            Grounded = false;
+        }
+    }
+
+    private void CoordinateCamera()
+    {
+        float newRotationY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSensitivity;
+        rb.transform.localEulerAngles = new Vector3(0, newRotationY, 0);
     }
 }

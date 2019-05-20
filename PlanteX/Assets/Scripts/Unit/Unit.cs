@@ -4,50 +4,39 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
 {
+    [Header("Movement Settings")]
+    public float MovementSpeed;
+    public float MaximumMovementSpeed;
+    public float JumpHeight;
+    public float JumpMultiplier;
+    
+
+    [Header("Attributes")]
     public float Health;
-    public float Movespeed;
+    public float AttackDamage;
 
 
-    // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CheckIfDead()
     {
-        if (getHealth() <= 0)
+        if (Health <= 0)
         {
             Kill();
         }
     }
 
-    public void Kill()
+    public virtual void Kill()
     {
-        enabled = false;
+        Destroy(gameObject);
     }
 
-    public void Damage(float damageTaken)
+    public virtual void Damage(float damageTaken)
     {
-        setHealth(getHealth() - damageTaken);
-    }
-
-    public float getHealth()
-    {
-        return Health;
-    }
-    public void setHealth(float health)
-    {
-        Health = health;
-    }
-
-    public float getMovespeed()
-    {
-        return Movespeed;
-    }
-    public void setMovespeed(float movespeed)
-    {
-        Movespeed = movespeed;
+        Health -= damageTaken;
+        CheckIfDead();
     }
 }

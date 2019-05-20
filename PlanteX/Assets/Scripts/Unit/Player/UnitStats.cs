@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+public class UnitStats : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField]
@@ -16,7 +16,13 @@ public class Stats : MonoBehaviour
     [SerializeField]
     public bool MovementSpeedCapped;
 
-
+    [Header("Attributes")]
     [SerializeField]
-    public int MyProperty;
+    public float Health;
+    [SerializeField]
+    public float Damage;
+
+    //[Header("Modifiers")]
+    //public List<Buff> Buffs;
+    //public List<DeBuffs> DeBuffs;
 }

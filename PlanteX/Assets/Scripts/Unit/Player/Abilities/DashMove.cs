@@ -5,29 +5,44 @@ using UnityEngine;
 public class DashMove : Ability
 {
 
-    private float DashSpeed = 1500;
-    private float CooldownTime = 2;
+    [Header("Ability variables")]
+    public float DashSpeed;
+    public float CooldownTime;
 
-    private float nextFireTime = 0;
+    private float NextFireTime;
 
-    public void Initialize(Rigidbody rb)
+    private void Start()
     {
-        if (Time.time > nextFireTime)
+        NextFireTime = 0;
+    }
+
+    public override void Initialize(Rigidbody rb, GameObject player)
+    {
+        Debug.Log("cooldown: " + CooldownTime);
+        if (Time.time > NextFireTime)
         {
-            rb.AddForce(rb.transform.forward * DashSpeed * Time.deltaTime, ForceMode.Impulse);
-            nextFireTime = Time.time + CooldownTime;
+            Vector3 movementDirection = DecideDirection();
+
+            //TODO: manage cd, set fire mechanism as separate method?
+            
+            rb.AddRelativeForce(movementDirection * DashSpeed * Time.deltaTime, ForceMode.Impulse);
+            NextFireTime = Time.time + CooldownTime;
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private Vector3 DecideDirection()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //DashMove tilatter å bli kontrollert av tast input men defaulter til fremover.
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        {
+            return new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        }
+        else
+        {
+            //Fremover
+            return new Vector3(0, 0, 1);
+        }
+        //Bug pga spillers "movementspeed cap" blir DashMove velocity begrenset hvis en bruker piltastene. 
+        //Dette kan løses med et "buff system som gir spiller f.eks. 1 sec med uncapped movement etter DashMove bruk.
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ChaseState : MonoBehaviour
 { 
-    public Transform target;
-
+    private Transform target;
+     
     // Start is called before the first frame update
     void Start()
     {
-        
+        Begin();
     }
 
     private void Awake()
@@ -20,12 +20,12 @@ public class ChaseState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float speed = gameObject.GetComponent<Enemy>().getMovespeed();
+        float speed = GetComponent<Enemy>().MovementSpeed;
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
 
-    public void begin()
+    public void Begin()
     {
-        target = gameObject.GetComponent<Enemy>().getTarget();
+        target = GetComponent<Enemy>().Target;
     }
 }
