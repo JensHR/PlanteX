@@ -10,7 +10,7 @@ public class moveScene : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            int loadLevel = SceneManager.GetActiveScene().buildIndex;
+            loadLevel = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(loadLevel);
         }
     }
