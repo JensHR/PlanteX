@@ -6,7 +6,7 @@ public class Ability : MonoBehaviour
 {
 
 
-    public virtual void Initialize(Rigidbody rb, Unit us)
+    public virtual void Initialize(Rigidbody rb, GameObject player)
     {
         Debug.Log("Error Ability baseclass Initialize() called");
     }

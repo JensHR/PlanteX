@@ -18,6 +18,11 @@ public class Enemy : Unit
         Debug.Log("Awoke Enemy");
     }
 
+    void Start()
+    {
+        
+    }
+
     public virtual void Attack()
     {
         Debug.Log("Enemy baseclass attack!");
@@ -25,6 +30,6 @@ public class Enemy : Unit
 
     public void CreateNew()
     {
-        //target = GameObject.FindWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 }

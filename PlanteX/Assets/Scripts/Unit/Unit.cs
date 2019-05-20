@@ -5,25 +5,23 @@ using UnityEngine;
 public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
 {
     [Header("Movement Settings")]
-    [SerializeField]
     public float MovementSpeed;
-    [SerializeField]
     public float MaximumMovementSpeed;
-    [SerializeField]
     public float JumpHeight;
-    [SerializeField]
     public float JumpMultiplier;
-    [SerializeField]
-    public bool MovementSpeedCapped;
+    
 
     [Header("Attributes")]
-    [SerializeField]
     public float Health;
-    [SerializeField]
     public float AttackDamage;
 
 
     void Update()
+    {
+        
+    }
+
+    public void CheckIfDead()
     {
         if (Health <= 0)
         {
@@ -33,11 +31,12 @@ public class Unit : MonoBehaviour, IKillable, IDamageAble<float>
 
     public virtual void Kill()
     {
-        enabled = false;
+        Destroy(gameObject);
     }
 
     public virtual void Damage(float damageTaken)
     {
         Health -= damageTaken;
+        CheckIfDead();
     }
 }

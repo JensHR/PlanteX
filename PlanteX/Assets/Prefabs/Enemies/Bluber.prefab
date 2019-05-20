@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 64
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!114 &3414016266058854318
 MonoBehaviour:
@@ -135,8 +135,8 @@ MonoBehaviour:
   Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}
   AggroRange: 20
   AttackRange: 3
-  AttackWindupTime: 2
-  AttackVelocity: 5000
+  AttackWindupTime: 1.5
+  AttackVelocity: 2500
 --- !u!114 &3497765373811638001
 MonoBehaviour:
   m_ObjectHideFlags: 0

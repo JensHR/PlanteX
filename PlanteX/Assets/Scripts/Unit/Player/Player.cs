@@ -5,21 +5,17 @@ using UnityEngine;
 public class Player : Unit
 {
 
+    public bool MovementSpeedCapped;
+
     void LateUpdate()
     {
-        checkIfDead();
-    }
-
-    private void checkIfDead()
-    {
-        if (Health <= 0)
-        {
-            Kill();
-        }
+        
     }
 
     public override void Kill()
     {
+        //Ekstra logik fordi det er spilleren som dør (restartmeny?)
+        Debug.Log("You died");
         base.Kill();
         Debug.Log("You died");
     }

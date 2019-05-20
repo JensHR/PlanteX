@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour  
 {
     private Rigidbody rb;
-    private Player Player;
+    private GameObject Player;
 
     private bool UsingActionOne;
     private bool UsingActionTwo;
@@ -26,11 +26,13 @@ public class PlayerAction : MonoBehaviour
         UsingActionThree = false;
 
         rb = GetComponent<Rigidbody>();
-        Player = GetComponent<Player>();
+        Player = GameObject.FindGameObjectWithTag("Player");
 
-        ActionOne = new DashMove();
+        //ActionOne = new DashMove();
+        ActionOne = GetComponentInChildren<DashMove>();
 
-        Seedshot = new SeedShot();
+        ActionTwo = GetComponentInChildren<SeedShot>();
+
     }
 
     // Update is called once per frame
@@ -62,7 +64,7 @@ public class PlayerAction : MonoBehaviour
 
         if (UsingActionTwo)
         {
-            Seedshot.Initialize();
+            ActionTwo.Initialize(rb, Player);
             UsingActionTwo = false;
         }
 

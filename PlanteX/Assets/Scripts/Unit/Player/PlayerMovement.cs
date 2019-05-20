@@ -96,6 +96,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        //Denne KAN fjernes ettersom det egentlig kunne ha vært en kul mechanical feature
+
+        //Hindrer deg i å hoppe om du forlater bakken f.eks faller ned fra noe
+        if (collision.collider.tag == "Ground")
+        {
+            Grounded = false;
+        }
+    }
+
     private void CoordinateCamera()
     {
         float newRotationY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSensitivity;
