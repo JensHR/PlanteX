@@ -199,7 +199,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848853933946086573}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.0031278792, y: -0.00729186, z: -0.017828878, w: 0.9998096}
   m_LocalPosition: {x: 0, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -208,7 +208,7 @@ Transform:
   - {fileID: 179623797990742159}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.34300002, y: -0.84200007, z: -2.046}
 --- !u!33 &5848853933946086582
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -299,13 +299,9 @@ MonoBehaviour:
   MaximumMovementSpeed: 15
   JumpHeight: 120
   JumpMultiplier: 120
-  MovementSpeedCapped: 1
   Health: 100
   AttackDamage: 10
-  ActionOne: {fileID: 0}
-  ActionTwo: {fileID: 0}
-  ActionThree: {fileID: 0}
-  Test1: {fileID: 0}
+  MovementSpeedCapped: 1
 --- !u!114 &5848853933946086569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +311,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5848853933946086573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cad512852f902e43834f6242582e0c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 34bf704a90255e145b939610c30d176b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSensitivity: 3
@@ -423,10 +419,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5848853934282038765}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a0420088ecd8c44198fa5d28090e0a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 55d56037a1238d947b20bdbf8d30b754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 5848853933946086571}
   offset: {x: 0, y: 50, z: -45}
-  rotation: {x: 75, y: 0, z: 0, w: 0}
-  Sensitivity: 1
+  rotation: {x: 0, y: 0, z: 0, w: 0}
+  Sensitivity: 0
