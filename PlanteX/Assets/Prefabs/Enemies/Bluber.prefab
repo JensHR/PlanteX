@@ -13,14 +13,14 @@ GameObject:
   - component: {fileID: 1464684258117877492}
   - component: {fileID: 6392794636825347059}
   - component: {fileID: 2296057174882586018}
-  - component: {fileID: 3497765373811638001}
   - component: {fileID: 3414016266058854318}
+  - component: {fileID: 3497765373811638001}
   - component: {fileID: 2997782524838277766}
   - component: {fileID: 5497793343538516017}
   - component: {fileID: 8586765348980753231}
   m_Layer: 0
   m_Name: Bluber
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,20 +111,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &3497765373811638001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004664950098100857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88ff3254c8e6d7747a870f33dae3d5d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3414016266058854318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,8 +125,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8da2851e4159a47b59338f2e1d9296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 955561741068458134, guid: bb6362274203e1e41b4f2c3e74468ba7, type: 3}
-  stateSelector: {fileID: 0}
+  MovementSpeed: 3
+  MaximumMovementSpeed: 3
+  JumpHeight: 0
+  JumpMultiplier: 0
+  Health: 100
+  AttackDamage: 2
+  Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}
+  AggroRange: 20
+  AttackRange: 3
+  AttackWindupTime: 1.5
+  AttackVelocity: 2500
+--- !u!114 &3497765373811638001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004664950098100857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ff3254c8e6d7747a870f33dae3d5d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2997782524838277766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6a092dc7b22614fad62f940174a8ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  target: {fileID: 0}
 --- !u!114 &5497793343538516017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,8 +172,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bce1763fa6f8a0b42bfed1291116d61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  target: {fileID: 0}
 --- !u!114 &8586765348980753231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,10 +184,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21487c5842182a242adbcfae956bd226, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  defaultMoveDelay: 0
-  moveSpot: {fileID: 0}
-  minX: 0
-  minY: 0
-  maxX: 0
-  maxY: 0

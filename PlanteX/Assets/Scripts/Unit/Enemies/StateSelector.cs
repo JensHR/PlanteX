@@ -16,21 +16,21 @@ public class StateSelector : MonoBehaviour
 
     public void enableChaseState() {
         disableAllStates();
-        gameObject.GetComponent<ChaseState>().begin();
+        gameObject.GetComponent<ChaseState>().Begin();
         gameObject.GetComponent<ChaseState>().enabled = true;
     }
 
     public void enableAttackState()
     {
         disableAllStates();
-        gameObject.GetComponent<AttackState>().begin();
+        gameObject.GetComponent<AttackState>().Begin();
         gameObject.GetComponent<AttackState>().enabled = true;
     }
 
     public void enablePatrolState()
     {
         disableAllStates();
-        gameObject.GetComponent<PatrolState>().begin();
+        gameObject.GetComponent<PatrolState>().Begin();
         gameObject.GetComponent<PatrolState>().enabled = true;
     }
 

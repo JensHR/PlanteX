@@ -2,52 +2,24 @@
 
 public class Enemy : Unit 
 {
-    public Transform target;
+    [Header("Enemy properties")]
+    public Transform Target;
 
-    public float aggroRange;
-    public float attackRange;
-
-    void Update()
-    {
-
-    }
+    public float AggroRange;
+    public float AttackRange;
 
     void Awake() 
     {
         Debug.Log("Awoke Enemy");
     }
 
+    public virtual void Attack()
+    {
+        Debug.Log("Enemy baseclass attack!");
+    }
+
     public void CreateNew()
     {
-        //target = GameObject.FindWithTag("Player").transform;
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
-
-    public void setTarget(Transform newTarget)
-    {
-        target = newTarget;
-    }
-
-    public Transform getTarget()
-    {
-        return target;
-    }
-
-    public void setAttackRange(float range)
-    {
-        attackRange = range;
-    }
-    public float getAttackRange()
-    {
-        return attackRange;
-    }
-
-    public void setAggroRange(float agRange)
-    {
-        aggroRange = agRange;
-    }
-    public float getAggroRange()
-    {
-        return aggroRange;
-    }
-
 }

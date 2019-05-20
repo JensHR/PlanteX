@@ -7,25 +7,24 @@ public class PatrolState : MonoBehaviour
     //https://www.youtube.com/watch?v=8eWbSN2T8TE  Kilde
 
     private float moveDelay;
-    public float defaultMoveDelay;
+    private float defaultMoveDelay;
 
-    public Vector3 moveSpot;
-    public float minX;
-    public float minZ;
-    public float maxX;
-    public float maxZ;
+    private Vector3 moveSpot;
+    private float minX;
+    private float minZ;
+    private float maxX;
+    private float maxZ;
 
     // Start is called before the first frame update
     void Start()
     {
-        moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
-        moveDelay = defaultMoveDelay;
+        Begin();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float speed = gameObject.GetComponent<Enemy>().getMovespeed();
+        float speed = GetComponent<Enemy>().MovementSpeed;
         transform.position = Vector3.MoveTowards(transform.position, moveSpot, speed * Time.deltaTime);
 
         if (Vector3.Distance(transform.position, moveSpot) < 0.2f)
@@ -42,13 +41,14 @@ public class PatrolState : MonoBehaviour
         }
     }
 
-    public void begin()
+    public void Begin()
     {
-        defaultMoveDelay = 2;
-        minX = gameObject.transform.position.x - 10;
-        minZ = gameObject.transform.position.z - 10;
-        maxX = gameObject.transform.position.x + 10;
-        maxZ = gameObject.transform.position.z + 10;
+        defaultMoveDelay = 1.5f;
+        moveDelay = defaultMoveDelay;
+        minX = transform.position.x - 10;
+        minZ = transform.position.z - 10;
+        maxX = transform.position.x + 10;
+        maxZ = transform.position.z + 10;
         moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
 
     }
