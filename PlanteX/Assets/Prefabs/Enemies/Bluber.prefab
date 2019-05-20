@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8586765348980753231}
   m_Layer: 0
   m_Name: Bluber
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,6 @@ MonoBehaviour:
   MaximumMovementSpeed: 3
   JumpHeight: 0
   JumpMultiplier: 0
-  MovementSpeedCapped: 1
   Health: 100
   AttackDamage: 2
   Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}

@@ -34,12 +34,6 @@ public class EnemyBluber : Enemy
         currentState = StateSelector.NOSTATE;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void Attack()
     {
         if (NextAttack < Time.time && NextAttack != default)
