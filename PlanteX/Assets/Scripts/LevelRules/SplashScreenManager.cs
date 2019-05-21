@@ -2,28 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(AudioSource))]
 public class SplashScreenManager : MonoBehaviour
 {
-    public MovieTexture SplashScreenTexture;
-    private AudioSource audio;
+    public VideoClip VideoClip;
 
     void Start()
     {
-        GetComponent<RawImage>().texture = SplashScreenTexture as MovieTexture;
-        audio = GetComponent<AudioSource>();
-        audio.clip = SplashScreenTexture.audioClip;
+        VideoPlayer videoPlayer = gameObject.AddComponent<VideoPlayer>();
+        AudioSource audioSource = gameObject.AddComponent<AudioSource>();
 
-        SplashScreenTexture.Play();
-        audio.Play();
+        videoPlayer.playOnAwake = false;
+        audioSource.playOnAwake = false;
+        videoPlayer.clip = VideoClip;
+        videoPlayer.isLooping = true;
+        videoPlayer.renderMode = VideoRenderMode.CameraFarPlane;
+        videoPlayer.targetCamera = GameObject.FindObjectOfType<Camera>();
+        videoPlayer.aspectRatio = VideoAspectRatio.Stretch;
+        videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+        videoPlayer.SetTargetAudioSource(0, audioSource);
+
+        videoPlayer.prepareCompleted += (source) => videoPlayer.Play();
+
+        videoPlayer.Prepare();
     }
 
     void Update()
     {
-        if (!SplashScreenTexture.isPlaying)
+        if (Input.anyKey)
         {
-            Application.LoadLevel(1);
+            SceneManager.LoadScene("startmenu");
         }
     }
 }

@@ -126,17 +126,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8da2851e4159a47b59338f2e1d9296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
+  MovementSpeed: 10
   MaximumMovementSpeed: 3
   JumpHeight: 0
   JumpMultiplier: 0
-  Health: 100
+  Health: 25
   AttackDamage: 2
   Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}
   AggroRange: 50
-  AttackRange: 10
+  AttackRange: 20
   AttackWindupTime: 1.5
-  AttackVelocity: 2500
+  AttackVelocity: 3000
 --- !u!114 &3497765373811638001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246604085303552100}
     m_Modifications:
+    - target: {fileID: 4272558924731820731, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_Name
+      value: FloatingHealthTake2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3026652069503828286, guid: 67de478663e044b9fa053fe06c348d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -298,25 +313,10 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4272558924731820731, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_Name
-      value: FloatingHealthTake2
-      objectReference: {fileID: 0}
     - target: {fileID: 5892591594898467169, guid: 67de478663e044b9fa053fe06c348d50,
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.000002861023
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67de478663e044b9fa053fe06c348d50, type: 3}
