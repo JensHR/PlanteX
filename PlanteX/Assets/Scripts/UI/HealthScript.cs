@@ -27,7 +27,7 @@ public class HealthScript : MonoBehaviour
 
     public void HandleHealth(float currentHealth)
     {
-        HealthField.text = "Health: " + currentHealth;
+        HealthField.text = HEALTH_STRING + currentHealth;
 
         float currentXValue = MapValues(currentHealth, 0, MaxHealth, MinXValue, MaxXValue);
 

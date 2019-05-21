@@ -11,6 +11,8 @@ public class EnemyBluber : Enemy
     public float AttackWindupTime;
     public float AttackVelocity;
 
+    private bool FoundPlayer;
+
     private bool AttackInProgress;
     private float AttackWindupProgress;
 
@@ -41,7 +43,7 @@ public class EnemyBluber : Enemy
             Debug.Log("Trying to attack");
             NextAttack = AttackWindupTime + Time.time;
             Vector3 movementDirection = (transform.position - Target.transform.position).normalized * -1;
-            GetComponent<Rigidbody>().AddForce(movementDirection * AttackVelocity * Time.deltaTime, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(movementDirection * AttackVelocity * Time.deltaTime, ForceMode.VelocityChange);
         }
         else if (NextAttack == default)
         {
@@ -71,10 +73,11 @@ public class EnemyBluber : Enemy
                 currentState = StateSelector.ATTACKSTATE;
             }   
         }
-        else if(distance <= AggroRange)
+        else if(distance <= AggroRange || FoundPlayer)
         {
             if (currentState != StateSelector.CHASESTATE)
             {
+                FoundPlayer = true;
                 Debug.Log("Starting chaseState script");
                 stateSelector.enableChaseState();
                 currentState = StateSelector.CHASESTATE;

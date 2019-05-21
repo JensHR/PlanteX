@@ -13,6 +13,12 @@ public class Enemy : Unit
         Debug.Log("Awoke Enemy");
     }
 
+    public override void Damage(float damageTaken)
+    {
+        base.Damage(damageTaken);
+        GetComponentInChildren<FloatingBar>().HandleHealth(Health);
+    }
+
     public virtual void Attack()
     {
         Debug.Log("Enemy baseclass attack!");

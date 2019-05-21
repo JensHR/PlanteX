@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShotForce: 5000
-  CooldownTime: 2
+  CooldownTime: 0.5
   source: {fileID: 5848853933666237114}
   effectToSpawn: {fileID: 3029972074010906926, guid: 792cf117809ed3341879ac578a340cde,
     type: 3}
