@@ -6,27 +6,27 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour {
 
-    public Button newGameButton;
+    public Button NewGameButton;
 
-    public Button loadButton;
+    public Button HowToPlay;
 
-    public Button exitGameButton;
+    public Button ExitGameButton;
 
     public string newGameSceneName;
 
-    public GameObject loadGameMenu;
+    public GameObject HowToPlayCanvas;
 
     public void Awake(){
-        newGameButton.onClick.AddListener(NewGame);
-        loadButton.onClick.AddListener(OpenLoadGameMenu);
-        exitGameButton.onClick.AddListener(ExitGame);
+        NewGameButton.onClick.AddListener(NewGame);
+        HowToPlay.onClick.AddListener(OpenHowToPlay);
+        ExitGameButton.onClick.AddListener(ExitGame);
     }
 
     public void NewGame(){
         SceneManager.LoadScene(newGameSceneName);
     }
-    public void OpenLoadGameMenu(){
-        loadGameMenu.SetActive(true);
+    public void OpenHowToPlay(){
+        HowToPlayCanvas.SetActive(true);
     }
 
     public void ExitGame(){

@@ -9,6 +9,9 @@ public class PatrolState : MonoBehaviour
     private float moveDelay;
     private float defaultMoveDelay;
 
+    [SerializeField]
+    private float YOffsett;
+
     private Vector3 moveSpot;
     private float minX;
     private float minZ;
@@ -31,7 +34,7 @@ public class PatrolState : MonoBehaviour
         {
             if (moveDelay <= 0)
             {
-                moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
+                moveSpot = new Vector3(Random.Range(minX, maxX), YOffsett, Random.Range(minZ, maxZ));
                 moveDelay = defaultMoveDelay;
             }
             else
@@ -49,7 +52,7 @@ public class PatrolState : MonoBehaviour
         minZ = transform.position.z - 10;
         maxX = transform.position.x + 10;
         maxZ = transform.position.z + 10;
-        moveSpot = new Vector3(Random.Range(minX, maxX), 0.5f, Random.Range(minZ, maxZ));
+        moveSpot = new Vector3(Random.Range(minX, maxX), YOffsett, Random.Range(minZ, maxZ));
 
     }
 }

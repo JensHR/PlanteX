@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840b02adf379dd4487f3b133b01c26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YOffsett: 0.5
 --- !u!1001 &8026608453173483165
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,11 +193,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 246604085303552100}
     m_Modifications:
-    - target: {fileID: 4272558924731820731, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_Name
-      value: FloatingHealthTake2
-      objectReference: {fileID: 0}
     - target: {fileID: 3026652069503828286, guid: 67de478663e044b9fa053fe06c348d50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -301,6 +297,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4272558924731820731, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_Name
+      value: FloatingHealthTake2
       objectReference: {fileID: 0}
     - target: {fileID: 5892591594898467169, guid: 67de478663e044b9fa053fe06c348d50,
         type: 3}

@@ -13,6 +13,12 @@ public class Enemy : Unit
         Debug.Log("Awoke Enemy");
     }
 
+    public override void Kill()
+    {
+        GetComponentInChildren<FloatingBar>().enabled = false;
+        base.Kill();
+    }
+
     public override void Damage(float damageTaken)
     {
         base.Damage(damageTaken);

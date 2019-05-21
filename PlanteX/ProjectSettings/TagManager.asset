@@ -8,6 +8,7 @@ TagManager:
   - HealthBar
   - Enemy
   - PortalSphere
+  - MagicPot
   layers:
   - Default
   - TransparentFX
