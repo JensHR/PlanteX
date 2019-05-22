@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DashSpeed: 1500
   CooldownTime: 2
+  Lyd: {fileID: 8300000, guid: 7c38448f03bf3ae4aa960e56e21f7753, type: 3}
 --- !u!114 &8707092827733011714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +74,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 0
-  Range: 0
-  Cooldown: 0
+  Range: 2
+  CooldownTime: 3
+  Source: {fileID: 5848853933666237114}
 --- !u!114 &2339450870477617324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,6 +303,7 @@ MonoBehaviour:
   JumpMultiplier: 120
   Health: 100
   AttackDamage: 10
+  DeathSound: {fileID: 8300000, guid: ba7b14f1020f22b44ab2690beb380e96, type: 3}
   MovementSpeedCapped: 1
 --- !u!114 &5848853933946086569
 MonoBehaviour:

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : Unit
 {
-
+    [SerializeField]
+    private AudioClip DeathSound;
     public bool MovementSpeedCapped;
 
     void LateUpdate()
@@ -18,7 +19,19 @@ public class Player : Unit
         //Ekstra logik fordi det er spilleren som dør (restartmeny?)
         Debug.Log("You died");
         //ShowTip
-        base.Kill();
+
+        AudioSource audio = gameObject.AddComponent<AudioSource>();
+        audio.playOnAwake = false;
+        audio.clip = DeathSound;
+        audio.volume = 0.4f;
+        audio.Play();
+
+        StartCoroutine("GameOver");
+    }
+
+    private IEnumerator GameOver()
+    {
+        yield return new WaitForSeconds(2.78f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

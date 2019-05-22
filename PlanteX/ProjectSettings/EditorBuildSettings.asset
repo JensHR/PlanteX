@@ -6,15 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/FlashScreenManager.unity
+    guid: 218f949febb7784499adc3a60857c5ea
+  - enabled: 1
+    path: Assets/Scenes/startmenu.unity
+    guid: 9a061357af6df4bde83b3a92455cfadf
+  - enabled: 1
     path: Assets/Scenes/1001.unity
     guid: a0a0efa1fbd87274180e6fbfc188fd42
   - enabled: 1
     path: Assets/Scenes/1002.unity
     guid: f467ebd1ea4ebd9438e223f00f54ffc1
   - enabled: 1
-    path: Assets/Scenes/startmenu.unity
-    guid: 9a061357af6df4bde83b3a92455cfadf
-  - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: a67c162e03d90bb46a92f1f02a2b5c32
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: 5ebdb61621e2f4e499e18f6d8f87b1cd
   m_configObjects: {}

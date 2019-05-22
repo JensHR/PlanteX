@@ -8,6 +8,8 @@ public class DashMove : Ability
     [Header("Ability variables")]
     public float DashSpeed;
     public float CooldownTime;
+    [SerializeField]
+    private AudioClip Lyd;
 
     private float NextFireTime;
 
@@ -24,10 +26,26 @@ public class DashMove : Ability
             Vector3 movementDirection = DecideDirection();
 
             //TODO: manage cd, set fire mechanism as separate method?
-            
+
+            AudioSource audio = gameObject.AddComponent<AudioSource>();
+            audio.playOnAwake = false;
+            audio.clip = Lyd;
+            audio.volume = 0.4f;
+            audio.Play();
+            //Destroy(audio);
+
+            StartCoroutine("UncapMovementSpeed", player);
+
             rb.AddRelativeForce(movementDirection * DashSpeed * Time.deltaTime, ForceMode.Impulse);
             NextFireTime = Time.time + CooldownTime;
         }
+    }
+
+    private IEnumerator UncapMovementSpeed(GameObject value)
+    {
+        value.GetComponent<Player>().MovementSpeedCapped = false;
+        yield return new WaitForSeconds(1);
+        value.GetComponent<Player>().MovementSpeedCapped = true;
     }
 
     private Vector3 DecideDirection()

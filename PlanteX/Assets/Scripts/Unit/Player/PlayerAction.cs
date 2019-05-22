@@ -33,6 +33,8 @@ public class PlayerAction : MonoBehaviour
 
         ActionTwo = GetComponentInChildren<SeedShot>();
 
+        ActionThree = GetComponentInChildren<RootStrike>();
+
     }
 
     // Update is called once per frame
@@ -70,7 +72,8 @@ public class PlayerAction : MonoBehaviour
 
         if (UsingActionThree)
         {
-            //ActionThree
+            //COuld make Melee attack in time
+            //ActionThree.Initialize(rb, Player);
             UsingActionThree = false;
         }
     }

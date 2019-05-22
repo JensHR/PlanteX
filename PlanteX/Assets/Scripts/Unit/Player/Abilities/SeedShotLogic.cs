@@ -69,6 +69,7 @@ public class SeedShotLogic : MonoBehaviour
 
         Rigidbody rb = gameObject.AddComponent<Rigidbody>();
         GetComponent<CapsuleCollider>().enabled = true;
+        rb.mass = 0.1f;
         rb.AddForce(transform.up * ShotForce * Time.deltaTime, ForceMode.VelocityChange);
         Fired = true;
     }

@@ -135,7 +135,7 @@ MonoBehaviour:
   Target: {fileID: 5848853933946086583, guid: b09b12cd77d727f4f9d5c9bf5f446e92, type: 3}
   AggroRange: 50
   AttackRange: 20
-  AttackWindupTime: 1.5
+  AttackWindupTime: 1
   AttackVelocity: 3000
 --- !u!114 &3497765373811638001
 MonoBehaviour:
@@ -197,16 +197,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FloatingHealthTake2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3026652069503828286, guid: 67de478663e044b9fa053fe06c348d50,
         type: 3}
@@ -317,6 +307,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.000002861023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025393724292850691, guid: 67de478663e044b9fa053fe06c348d50,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67de478663e044b9fa053fe06c348d50, type: 3}
